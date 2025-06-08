@@ -31,7 +31,6 @@ def create_file(params):
         if not filename:
             return "Error: filename is required"
 
-        # Create directory if it doesn't exist
         if os.path.dirname(filename):
             os.makedirs(os.path.dirname(filename), exist_ok=True)
 
@@ -105,7 +104,6 @@ def git_commit_and_push(params):
     except Exception as e:
         return f"❌ Error in git operations: {e}"
 
-# Tool registry with descriptions
 available_tools = {
     "add": {
         "function": add,
